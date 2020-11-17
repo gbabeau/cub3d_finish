@@ -22,6 +22,8 @@ MLX = -I ./include -lmlx -lm -framework OpenGL -framework AppKit
 
 LMLX = -L./libft -lft -I/usr/local/include -L/usr/local/lib -lmlx -L/usr/include -lm -lbsd -lX11 -lXext 
 
+LMLX_2 = -L./libft -lft  -L ./minilibx-linux/libmlx.a -lmlx -lm -lbsd -lX11 -lXext 
+
 BOFT = $(BO:.c=.o)
 OBJ = $(SRCS:.c=.o)
 HEAD = include
@@ -32,7 +34,7 @@ LIB = ./libft/libft.a
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	gcc  $(SRCS) $(CFLAGS) -o $(NAME) $(LMLX)
+	gcc  $(SRCS) $(CFLAGS) -o $(NAME) $(LMLX_2)
 clean :
 	rm -f $(OBJ)
 fclean : clean
